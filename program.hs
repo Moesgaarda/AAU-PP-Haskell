@@ -62,9 +62,9 @@ getSymbol (Branch _ _ s _) = s
 -}
 sortedInsert :: Tree -> [Tree] -> [Tree]
 sortedInsert n [] = [n]
-sortedInsert n (y:ys) = if (getWeight n) <= (getWeight y)
-                        then n:y:ys
-                        else y: sortedInsert n ys
+sortedInsert n (x:xs) = if (getWeight n) <= (getWeight x)
+                        then n:x:xs
+                        else x: sortedInsert n xs
 
 {-|
     makeEncodingTree is the function used for generating an encoding tree that can
