@@ -23,7 +23,7 @@ data Tree = Leaf Symbol Weight
 -}
 countLetters :: [Symbol] -> [Tree]
 countLetters [] = []
-countLetters inputString = makeLeaf (sortOn snd [(x, y) | x<-[' '..'z'], let y = (length.filter (==x)) inputString])
+countLetters inputString = makeLeaf (sortOn snd [(x, y) | x<-[' '..'z'], let y = (length.filter (==x)) inputString, y>0])
 
 {-|
     makeLeaf is a helper function for turning a tuple of type [(Char, Int)] into a leaf, so that it
